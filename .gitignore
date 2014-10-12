@@ -1,4 +1,9 @@
+
+# Temporary files
 /.sass-cache/*
 *.DS_Store
-output/
 *.pyc
+
+# Outputs
+output/
+vendor/
