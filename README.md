@@ -31,7 +31,13 @@ And run either `fab build` or `fab serve` to generate pages or run the site loca
 
 ## Deployment
 
-Run the following command,
+Before publishing the site, make sure you've set up correct `git` remote branches already:
+
+    git remote add github https://github.com/NTUOSC/ntuosc.github.io.git
+
+Note that weʻre deploying to root GitHub Pages repository. To change the behavior, modify `fabfile.py` in the project directory as your wish.
+
+When you‘re all set, run the following command,
 
     fab github
 

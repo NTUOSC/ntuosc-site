@@ -60,5 +60,6 @@ def publish():
     )
 
 def github():
+    local('pelican -s publishconf.py')
     local('ghp-import {deploy_path} && '
-          'git push origin gh-pages'.format(**env)))
+          'git push github master'.format(**env))
