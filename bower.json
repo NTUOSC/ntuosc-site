@@ -1,0 +1,26 @@
+{
+    "name": "ntuosc-site",
+    "description": "Website for NTU Open Source Community",
+    "authors": [
+        "Poren Chiang <ren.chiang@gmail.com>"
+    ],
+    "version": "0.14.0",
+    "license": "CC-BY-SA-4.0",
+    "homepage": "https://ntuosc.org",
+    "private": true,
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/NTUOSC/ntuosc-site.git"
+    },
+    "dependencies": {
+        "foundation": "5.4.3"
+    },
+    "ignore": [
+        "**/.*",
+        "node_modules",
+        "bower_components",
+        "vendor",
+        "test",
+        "tests"
+    ]
+}

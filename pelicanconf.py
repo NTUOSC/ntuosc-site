@@ -21,5 +21,8 @@ SOCIAL = []
 
 DEFAULT_PAGINATION = 3
 
+# Resources
+STATIC_PATHS = ['images', 'vendor']
+
 # Uncomment following line if you want document-relative URLs when developing
 #RELATIVE_URLS = True
