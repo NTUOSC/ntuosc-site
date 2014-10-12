@@ -58,3 +58,7 @@ def publish():
         local_dir=DEPLOY_PATH.rstrip('/') + '/',
         delete=True
     )
+
+def github():
+    local('ghp-import {deploy_path} && '
+          'git push origin gh-pages'.format(**env)))

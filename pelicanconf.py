@@ -2,11 +2,11 @@
 # -*- coding: utf-8 -*- #
 from __future__ import unicode_literals
 
-AUTHOR = u'Poren Chiang'
-SITENAME = u'NTU Open Source Community'
+AUTHOR = u'臺大開源社'
+SITENAME = u'臺灣大學開源社'
 SITEURL = ''
 
-TIMEZONE = 'Europe/Paris'
+TIMEZONE = 'Asia/Taipei'
 
 DEFAULT_LANG = u'tw'
 
@@ -16,14 +16,8 @@ CATEGORY_FEED_ATOM = None
 TRANSLATION_FEED_ATOM = None
 
 # Blogroll
-LINKS =  (('Pelican', 'http://getpelican.com/'),
-          ('Python.org', 'http://python.org/'),
-          ('Jinja2', 'http://jinja.pocoo.org/'),
-          ('You can modify those links in your config file', '#'),)
-
-# Social widget
-SOCIAL = (('You can add links in your config file', '#'),
-          ('Another social link', '#'),)
+LINKS =  []
+SOCIAL = []
 
 DEFAULT_PAGINATION = 3
 
