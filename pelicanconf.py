@@ -21,6 +21,8 @@ ARTICLE_PATHS = ['posts']
 ARTICLE_EXCLUDES = ['output', 'themes', 'vendor']
 STATIC_PATHS = ['images', 'vendor']
 THEME = 'themes/ntuosc'
+
+DEFAULT_DATE = 'fs'
 FILENAME_METADATA = r'(?P<slug>[A-Za-z0-9_-]+).*'
 EXTRA_PATH_METADATA = {
     'images/favicon.png': {'path': 'favicon.png'},
