@@ -74,6 +74,7 @@ def sass(action='compile', force='no', style='compressed', sourcemap='none'):
         args.append('-f')
     if env.sass_imports:
         args += ['-I %s' % path for path in env.sass_imports.split(';')]
+    args.append('-t {style}'.format(style=style))
     args.append('--sourcemap={type}'.format(type=sourcemap))
     args.append('--watch' if action == 'watch' else '--update')
     args.append('{sass_source}:{sass_target}'.format(**env))

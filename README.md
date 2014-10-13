@@ -28,6 +28,14 @@ to fetch all the required frontend components.
 
 And run either `fab build` or `fab serve` to generate pages or run the site locally.
 
+`fab sass` compiles SCSS stylesheets into compressed CSS. Here are some possible usages:
+
+    fab sass
+    fab sass:watch
+    fab sass:compile,force
+    fab sass:,,style=expanded,sourcemap=auto
+
+See SASS and Fabric documentation for more options.
 
 ## Deployment
 
