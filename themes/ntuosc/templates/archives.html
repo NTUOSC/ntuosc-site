@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block title %}所有文章{% endblock %}
+{% block content %}
+<div class="row">
+    <div class="large-12 columns">
+        <dl>
+        {% for article in dates -%}
+            <dt>{{ article.locale_date }}</dt>
+            <dd><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></dd>
+        {%- endfor %}
+        </dl>
+    </div>
+</div>
+{% endblock %}
