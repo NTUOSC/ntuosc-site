@@ -32,7 +32,7 @@ And run either `fab build` or `fab serve` to generate pages or run the site loca
 
     fab sass
     fab sass:watch
-    fab sass:compile,force
+    fab sass:compile,force build serve
     fab sass:,,style=expanded,sourcemap=auto
 
 See SASS and Fabric documentation for more options.
