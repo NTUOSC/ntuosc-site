@@ -36,7 +36,7 @@
         <section class="top-bar-section">
           <ul class="right">
           {% for title, link in SOCIAL -%}
-            <li class="{{ lower(title) }}-icon"><a href="{{ link }}" rel="external nofollow"><span>{{ title }}</span></a></li>
+            <li class="{{ title|lower }}-icon"><a href="{{ link }}" rel="external nofollow"><span>{{ title }}</span></a></li>
           {% endfor %}
           </ul>
           <ul class="left">

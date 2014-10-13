@@ -3,7 +3,7 @@
 from __future__ import unicode_literals
 
 AUTHOR = u'臺大開源社'
-SITENAME = u'臺灣大學開源社 / NTU Open Source Community'
+SITENAME = u'臺灣大學開源社'
 SITESUBTITLE = '讓我們一起推廣開源理念，許世界更美好的未來！'
 SITEURL = ''
 
@@ -20,6 +20,9 @@ TRANSLATION_FEED_ATOM = None
 PATH = 'content'
 STATIC_PATHS = ['images', 'vendor']
 THEME = 'themes/ntuosc'
+EXTRA_PATH_METADATA = {
+    'images/favicon.png': {'path': 'favicon.png'},
+}
 
 # Alter template behavior
 DIRECT_TEMPLATES = ('index', 'archives')
@@ -45,6 +48,7 @@ TAG_SAVE_AS = ''
 AUTHORS_SAVE_AS = ''
 AUTHOR_SAVE_AS = ''
 
+DEFAULT_PAGINATIONS = 3
 PAGINATION_PATTERNS = (
     (1, '{base_name}/', '{base_name}/index.html'),
     (2, '{base_name}/page/{number}/', '{base_name}/page/{number}/index.html'),
@@ -53,7 +57,10 @@ PAGINATION_PATTERNS = (
 
 # Metadata
 LINKS =  []
-SOCIAL = []
+SOCIAL = (
+    ('Facebook', 'https://www.facebook.com/NTUOSC'),
+    ('GitHub', 'https://github.com/NTUOSC'),
+)
 
 # Uncomment following line if you want document-relative URLs when developing
 #RELATIVE_URLS = True
