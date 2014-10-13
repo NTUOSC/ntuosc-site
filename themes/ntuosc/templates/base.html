@@ -26,8 +26,37 @@
     <script src="{{ SITEURL }}/vendor/modernizr/modernizr.js"></script>
   </head>
   <body>
-{% block content %}
-{% endblock content %}
+{% block __content %}
+    <div class="contain-to-grid">
+      <nav class="top-bar" data-topbar>
+        <ul class="title-area">
+          <li class="name"><h1><a href="{{ SITEURL }}">{{ SITENAME }}</a></h1></li>
+          <li class="toggle-topbar menu-icon"><a href="#"><span>功能表</span></a></li>
+        </ul>
+        <section class="top-bar-section">
+          <ul class="right">
+          {% for title, link in SOCIAL -%}
+            <li class="{{ title|lower }}-icon"><a href="{{ link }}" rel="external nofollow"><span>{{ title }}</span></a></li>
+          {% endfor %}
+          </ul>
+          <ul class="left">
+          {% for p in PAGES -%}
+              <li{% if p == page %} class="active"{% endif %}><a href="{{ SITEURL }}/{{ p.url }}">{{ p.title }}</a></li>
+          {%- endfor %}
+          </ul>
+        </section>
+      </nav>
+    </div>
+  {% block content %}
+  {% endblock content %}
+  <footer>
+    <div class="row">
+      <div class="large-12 columns">
+        <p>© {{ AUTHOR }}</p>
+      </div>
+    </div>
+  </footer>
+{% endblock __content %}
 
     <script src="{{ SITEURL }}/vendor/jquery/dist/jquery.min.js"></script>
     <script src="{{ SITEURL }}/vendor/foundation/js/foundation.min.js"></script>
