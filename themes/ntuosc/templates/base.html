@@ -26,11 +26,11 @@
     <script src="{{ SITEURL }}/vendor/modernizr/modernizr.js"></script>
   </head>
   <body>
-{% block __content %}
+{% block __body %}
     <div class="contain-to-grid">
       <nav class="top-bar" data-topbar>
         <ul class="title-area">
-          <li class="name"><h1><a href="{{ SITEURL }}">{{ SITENAME }}</a></h1></li>
+          <li class="name"><h1><a href="{{ SITEURL }}/">{{ SITENAME }}</a></h1></li>
           <li class="toggle-topbar menu-icon"><a href="#"><span>功能表</span></a></li>
         </ul>
         <section class="top-bar-section">
@@ -41,22 +41,27 @@
           </ul>
           <ul class="left">
           {% for p in PAGES -%}
-              <li{% if p == page %} class="active"{% endif %}><a href="{{ SITEURL }}/{{ p.url }}">{{ p.title }}</a></li>
+            <li{% if p == page %} class="active"{% endif %}><a href="{{ SITEURL }}/{{ p.url }}">{{ p.title }}</a></li>
           {%- endfor %}
+            <li{% if output_file == ARCHIVES_SAVE_AS %} class="active"{% endif %}><a href="{{ SITEURL }}/{{ ARCHIVES_URL }}">部落格</a></li>
           </ul>
         </section>
       </nav>
     </div>
-  {% block content %}
-  {% endblock content %}
-  <footer>
+  {% block __content %}
     <div class="row">
+      <div class="large-12 columns">
+        {% block content %}
+        {% endblock content %}
+      </div>
+    </div>
+  {% endblock __content %}
+    <footer class="row">
       <div class="large-12 columns">
         <p>© {{ AUTHOR }}</p>
       </div>
-    </div>
-  </footer>
-{% endblock __content %}
+    </footer>
+{% endblock __body %}
 
     <script src="{{ SITEURL }}/vendor/jquery/dist/jquery.min.js"></script>
     <script src="{{ SITEURL }}/vendor/foundation/js/foundation.min.js"></script>

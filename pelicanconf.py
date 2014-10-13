@@ -17,9 +17,11 @@ CATEGORY_FEED_ATOM = None
 TRANSLATION_FEED_ATOM = None
 
 # Resources
-PATH = 'content'
+ARTICLE_PATHS = ['posts']
+ARTICLE_EXCLUDES = ['output', 'themes', 'vendor']
 STATIC_PATHS = ['images', 'vendor']
 THEME = 'themes/ntuosc'
+FILENAME_METADATA = r'(?P<slug>[A-Za-z0-9_-]+).*'
 EXTRA_PATH_METADATA = {
     'images/favicon.png': {'path': 'favicon.png'},
 }
