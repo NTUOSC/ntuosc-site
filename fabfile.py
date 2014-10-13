@@ -15,6 +15,10 @@ env.cloudfiles_username = 'my_rackspace_username'
 env.cloudfiles_api_key = 'my_rackspace_api_key'
 env.cloudfiles_container = 'my_cloudfiles_container'
 
+# Sass configurations
+env.sass_source = 'themes/ntuosc/scss'
+env.sass_target = 'themes/ntuosc/static/css'
+env.sass_imports = 'vendor/foundation/scss'
 
 def clean():
     if os.path.isdir(DEPLOY_PATH):
@@ -63,3 +67,14 @@ def github():
     local('pelican -s publishconf.py')
     local('ghp-import {deploy_path} && '
           'git push github master'.format(**env))
+
+def sass(action='compile', force='no', style='compressed', sourcemap='none'):
+    args = ['sass']
+    if force != 'no':
+        args.append('-f')
+    if env.sass_imports:
+        args += ['-I %s' % path for path in env.sass_imports.split(';')]
+    args.append('--sourcemap={type}'.format(type=sourcemap))
+    args.append('--watch' if action == 'watch' else '--update')
+    args.append('{sass_source}:{sass_target}'.format(**env))
+    local(' '.join(args))
