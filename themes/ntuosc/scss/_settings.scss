@@ -29,10 +29,15 @@ $info-color: #b3e5fc;
 // 3. Global styles
 
 $global-radius: 4px;
+$global-transition-effect: 0.28s cubic-bezier(0.4, 0, 0.2, 1);
 
-// 3. Top bar
+// 4. Top bar
 
+$topbar-height: 48px;
 $topbar-bg-color: rgba($primary-color-300, 0);
+
+$topbar-title-weight: 500;
+$topbar-title-font-size: 1.25rem; // 20px
 
 $topbar-dropdown-bg: $topbar-bg-color;
 $topbar-dropdown-link-color: #333;
@@ -41,6 +46,7 @@ $topbar-dropdown-toggle-color: #333;
 
 $topbar-link-color: $body-font-color;
 $topbar-link-bg: $topbar-bg-color;
+$topbar-link-font-size: 0.875rem; // 14px
 
 $topbar-link-color-hover: #fff;
 $topbar-link-bg-hover: $primary-color-300;
@@ -53,7 +59,8 @@ $topbar-link-bg-active-hover: $topbar-bg-color;
 $topbar-dropdown-label-color: $primary-color-600;
 $topbar-dropdown-label-bg: $topbar-bg-color;
 
-$topbar-menu-link-color: #333;
-$topbar-menu-icon-color: #333;
-$topbar-menu-link-color-toggled: $primary-color-700;
-$topbar-menu-icon-color-toggled: $primary-color-700;
+$topbar-menu-link-weight: normal;
+$topbar-menu-link-color: $body-font-color;
+$topbar-menu-icon-color: $body-font-color;
+$topbar-menu-link-color-toggled: $primary-color-300;
+$topbar-menu-icon-color-toggled: $primary-color-300;

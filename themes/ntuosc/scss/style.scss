@@ -1,16 +1,49 @@
 @import 'settings';
 @import 'foundation';
 
-nav.top-bar li {
-    & > a {
-        transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-        border-bottom: 2px solid rgba($primary-color, 0);
-        padding-top: -2px;
+.contain-to-grid:first-child + div {
+    padding-top: 16px;
+}
 
-        &:hover { border-bottom-color: $primary-color-300; }
+nav.top-bar {
+    $menu-icon: ".toggle-topbar.menu-icon a span:after";
+    #{$menu-icon} {
+        transition: box-shadow $global-transition-effect;
+        width: 18px;
+        margin-top: -12px;
+        box-shadow: 0 5px 0 1px $topbar-menu-icon-color,
+                    0 11px 0 1px $topbar-menu-icon-color,
+                    0 17px 0 1px $topbar-menu-icon-color;
     }
 
-    &.active > a:hover { border-bottom-color: $primary-color; }
+    &:not(.expanded) {
+        margin-bottom: -16px;
+    }
+
+    &.expanded {
+        box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.16), 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+        #{$menu-icon} {
+            box-shadow: 0 5px 0 1px $topbar-menu-icon-color-toggled,
+                        0 11px 0 1px $topbar-menu-icon-color-toggled,
+                        0 17px 0 1px $topbar-menu-icon-color-toggled;
+        }
+    }
+}
+
+nav.top-bar li {
+    & > a {
+        transition: all $global-transition-effect;
+    }
+
+    @media #{$large-up} {
+        & > a {
+            border-bottom: 2px solid rgba($primary-color, 0);
+            padding-top: -2px;
+        }
+
+        &:hover { border-bottom-color: $primary-color-300; }
+        &.active > a:hover { border-bottom-color: $primary-color; }
+    }
 }
 
 footer {
