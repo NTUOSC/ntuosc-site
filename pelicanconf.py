@@ -62,6 +62,7 @@ PAGINATION_PATTERNS = (
 # Metadata
 LINKS =  []
 SOCIAL = (
+    ('Forum', 'https://www.facebook.com/groups/NTUOSC/'),
     ('Facebook', 'https://www.facebook.com/NTUOSC'),
     ('GitHub', 'https://github.com/NTUOSC'),
 )
