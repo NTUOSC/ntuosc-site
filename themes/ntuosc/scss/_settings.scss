@@ -10,7 +10,9 @@ $body-font-family: $font-family-sans-serif;
 
 // 2. Colors
 
-$primary-color: #03af94;
+$body-font-color: #212121;
+
+$primary-color: #03a9f4;
 $primary-color-100: #b3e5fc;
 $primary-color-200: #81d4fa;
 $primary-color-300: #4fc3f7;
@@ -18,24 +20,35 @@ $primary-color-600: #039be5;
 $primary-color-700: #0288d1;
 $primary-color-800: #027bbd;
 
+$secondary-color: #757575;
+$alert-color: #f44336;
+$success-color: #4caf50;
+$warning-color: #ff9800;
+$info-color: #b3e5fc;
+
 // 3. Global styles
 
 $global-radius: 4px;
 
 // 3. Top bar
 
-$topbar-bg-color: #fff;
+$topbar-bg-color: rgba($primary-color-300, 0);
 
 $topbar-dropdown-bg: $topbar-bg-color;
 $topbar-dropdown-link-color: #333;
 $topbar-dropdown-link-bg: $topbar-bg-color;
 $topbar-dropdown-toggle-color: #333;
 
-$topbar-link-color: $primary-color-800;
-$topbar-link-color-hover: $topbar-link-color;
-
+$topbar-link-color: $body-font-color;
 $topbar-link-bg: $topbar-bg-color;
-$topbar-link-bg-hover: $primary-color-100;
+
+$topbar-link-color-hover: #fff;
+$topbar-link-bg-hover: $primary-color-300;
+
+$topbar-link-color-active: $primary-color;
+$topbar-link-color-active-hover: $primary-color-300;
+$topbar-link-bg-active: $topbar-bg-color;
+$topbar-link-bg-active-hover: $topbar-bg-color;
 
 $topbar-dropdown-label-color: $primary-color-600;
 $topbar-dropdown-label-bg: $topbar-bg-color;

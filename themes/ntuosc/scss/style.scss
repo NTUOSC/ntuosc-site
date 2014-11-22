@@ -1,6 +1,18 @@
 @import 'settings';
 @import 'foundation';
 
+nav.top-bar li {
+    & > a {
+        transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+        border-bottom: 2px solid rgba($primary-color, 0);
+        padding-top: -2px;
+
+        &:hover { border-bottom-color: $primary-color-300; }
+    }
+
+    &.active > a:hover { border-bottom-color: $primary-color; }
+}
+
 footer {
     color: $secondary-color;
 }
