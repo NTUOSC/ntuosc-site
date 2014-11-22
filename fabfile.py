@@ -4,9 +4,8 @@ import os
 
 # Local path configuration (can be absolute or relative to fabfile)
 env.deploy_path = 'output'
+env.deploy_repo = 'https://github.com/NTUOSC/ntuosc.github.io.git'
 DEPLOY_PATH = env.deploy_path
-
-deploy_repo = 'https://github.com/NTUOSC/ntuosc.github.io.git'
 
 # Remote server configuration
 production = 'root@localhost:22'
