@@ -19,10 +19,17 @@ nav.top-bar {
 
     &:not(.expanded) {
         margin-bottom: -16px;
+        .icon > span { display: none; }
     }
 
     &.expanded {
         box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.16), 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+
+        li .icon:before {
+            position: absolute;
+            right: 16px;
+        }
+
         #{$menu-icon} {
             box-shadow: 0 5px 0 1px $topbar-menu-icon-color-toggled,
                         0 11px 0 1px $topbar-menu-icon-color-toggled,
@@ -45,6 +52,8 @@ nav.top-bar li {
         &:hover { border-bottom-color: $primary-color-300; }
         &.active > a:hover { border-bottom-color: $primary-color; }
     }
+
+    .icon:before { color: $secondary-color; }
 }
 
 footer {
