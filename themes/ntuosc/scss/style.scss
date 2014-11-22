@@ -7,14 +7,14 @@
 }
 
 nav.top-bar {
-    $menu-icon: ".toggle-topbar.menu-icon a span:after";
-    #{$menu-icon} {
-        transition: box-shadow $global-transition-effect;
-        width: 18px;
-        margin-top: -12px;
-        box-shadow: 0 5px 0 1px $topbar-menu-icon-color,
-                    0 11px 0 1px $topbar-menu-icon-color,
-                    0 17px 0 1px $topbar-menu-icon-color;
+    .menu.icon {
+        color: $topbar-menu-icon-color;
+        & > span { display: none; }
+        &:before {
+            position: absolute;
+            top: 15px;
+            right: 16px;
+        }
     }
 
     &:not(.expanded) {
@@ -30,10 +30,8 @@ nav.top-bar {
             right: 16px;
         }
 
-        #{$menu-icon} {
-            box-shadow: 0 5px 0 1px $topbar-menu-icon-color-toggled,
-                        0 11px 0 1px $topbar-menu-icon-color-toggled,
-                        0 17px 0 1px $topbar-menu-icon-color-toggled;
+        .menu.icon {
+            color: $topbar-menu-icon-color-toggled;
         }
     }
 }
