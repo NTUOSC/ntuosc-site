@@ -23,7 +23,7 @@ nav.top-bar {
     }
 
     &.expanded {
-        box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.16), 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+        box-shadow: $shadow-z-1;
 
         li .icon:before {
             position: absolute;
@@ -52,6 +52,42 @@ nav.top-bar li {
     }
 
     .icon:before { color: $secondary-color; }
+}
+
+.material-card {
+    background: #fff;
+    padding: 16px 0;
+
+    a {
+        display: block;
+        &:hover > img {
+            box-shadow: $shadow-z-2;
+        }
+    }
+
+    img {
+        transition: all $global-transition-effect;
+        border-radius: $global-radius;
+        box-shadow: $shadow-z-1;
+        pointer-events: none;
+    }
+}
+
+.avatar {
+    border-radius: 50%;
+}
+
+.people {
+    text-align: center;
+
+    @include block-grid(1);
+    @media #{$medium-up} { @include block-grid(3); }
+    @media #{$large-up} { @include block-grid(5); }
+
+    li { padding: 16px; }
+    .avatar { margin: 8px 0; }
+    h5 { font-weight: 500; }
+    h6 { color: $secondary-color; }
 }
 
 footer {
