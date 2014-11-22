@@ -17,9 +17,10 @@ CATEGORY_FEED_ATOM = None
 TRANSLATION_FEED_ATOM = None
 
 # Resources
+IGNORE_FILES = ['*.md']
 ARTICLE_PATHS = ['posts']
 ARTICLE_EXCLUDES = ['output', 'themes', 'vendor', 'pages']
-STATIC_PATHS = ['images', 'vendor']
+STATIC_PATHS = ['images', 'vendor', 'opendata', 'CNAME']
 THEME = 'themes/ntuosc'
 
 DEFAULT_DATE = 'fs'
