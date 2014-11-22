@@ -2,10 +2,18 @@
 {% block title %}所有文章{% endblock %}
 {% block content %}
 <h1>所有文章</h1>
+{%- if articles -%}
 <dl>
-{% for article in dates -%}
-    <dt>{{ article.locale_date }}</dt>
-    <dd><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></dd>
+{% for year, year_group in articles|groupby('date.year') -%}
+    {%- for month, group in year_group|groupby('date.month') -%}
+        <dt>{{ year }} 年 {{ month }} 月</dt>
+        {%- for article in group -%}
+            <dd><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></dd>
+        {%- endfor -%}
+    {%- endfor -%}
 {%- endfor %}
 </dl>
+{%- else -%}
+<p>目前尚無文章。</p>
+{%- endif -%}
 {% endblock %}

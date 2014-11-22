@@ -18,7 +18,7 @@ TRANSLATION_FEED_ATOM = None
 
 # Resources
 ARTICLE_PATHS = ['posts']
-ARTICLE_EXCLUDES = ['output', 'themes', 'vendor']
+ARTICLE_EXCLUDES = ['output', 'themes', 'vendor', 'pages']
 STATIC_PATHS = ['images', 'vendor']
 THEME = 'themes/ntuosc'
 
