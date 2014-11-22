@@ -6,6 +6,8 @@ import os
 env.deploy_path = 'output'
 DEPLOY_PATH = env.deploy_path
 
+deploy_repo = 'https://github.com/NTUOSC/ntuosc.github.io.git'
+
 # Remote server configuration
 production = 'root@localhost:22'
 dest_path = '/var/www'
@@ -23,7 +25,7 @@ env.sass_imports = 'vendor/foundation/scss'
 def clean():
     if os.path.isdir(DEPLOY_PATH):
         local('rm -rf {deploy_path}'.format(**env))
-        local('mkdir {deploy_path}'.format(**env))
+        local('git clone -o github {deploy_repo} {deploy_path}'.format(**env))
 
 def build():
     local('pelican -s pelicanconf.py')
@@ -65,8 +67,9 @@ def publish():
 
 def github():
     local('pelican -s publishconf.py')
-    local('ghp-import {deploy_path} && '
-          'git push github master'.format(**env))
+    with cd(env.deploy_path):
+        local('ghp-import . -r github -b master && '
+              'git push github master'.format(**env))
 
 def sass(action='compile', force='no', style='compressed', sourcemap='none'):
     args = ['sass']
