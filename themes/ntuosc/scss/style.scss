@@ -9,17 +9,22 @@
 nav.top-bar {
     .menu.icon {
         color: $topbar-menu-icon-color;
-        & > span { display: none; }
+        > span { display: none; }
         &:before {
             position: absolute;
-            top: 15px;
             right: 16px;
+            top: 15px;
         }
     }
 
     &:not(.expanded) {
         margin-bottom: -16px;
         .icon > span { display: none; }
+
+        .top-bar-section .icon:before {
+            position: relative;
+            top: 2px;   // Fix incorrect panning
+        }
     }
 
     &.expanded {
@@ -34,47 +39,57 @@ nav.top-bar {
             color: $topbar-menu-icon-color-toggled;
         }
     }
-}
 
-nav.top-bar li {
-    & > a {
-        transition: all $global-transition-effect;
-    }
-
-    @media #{$large-up} {
-        & > a {
-            border-bottom: 2px solid rgba($primary-color, 0);
-            padding-top: -2px;
+    li {
+        > a {
+            transition: all $global-transition-effect;
         }
 
-        &:hover { border-bottom-color: $primary-color-300; }
-        &.active > a:hover { border-bottom-color: $primary-color; }
-    }
+        @media #{$large-up} {
+            > a {
+                border-bottom: 2px solid rgba($primary-color, 0);
+                padding-top: -2px;
+            }
 
-    .icon:before { color: $secondary-color; }
+            &:hover { border-bottom-color: $primary-color-300; }
+            &.active > a:hover { border-bottom-color: $primary-color; }
+        }
+
+        .icon:before { color: $secondary-color; }
+    }
 }
 
 .material-card {
     background: #fff;
+    min-height: 56px;
+    min-width: 56px;
     padding: 16px 0;
 
     a {
         display: block;
+
         &:hover > img {
             box-shadow: $shadow-z-2;
         }
     }
 
     img {
-        transition: all $global-transition-effect;
         border-radius: $global-radius;
         box-shadow: $shadow-z-1;
         pointer-events: none;
+        transition: all $global-transition-effect;
     }
 }
 
-.avatar {
+.avatar-link {
     border-radius: 50%;
+    display: block;
+
+    .avatar {
+        border-radius: 50%;
+        min-height: 56px;
+        min-width: 56px;
+    }
 }
 
 .people {
