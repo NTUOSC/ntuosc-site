@@ -34,16 +34,16 @@
           <li class="toggle-topbar"><a href="#" class="menu icon"><span>功能表</span></a></li>
         </ul>
         <section class="top-bar-section">
-          <ul class="right">
-          {% for title, link in SOCIAL -%}
-            <li><a href="{{ link }}" rel="external nofollow" class="{{ title|lower }} icon"><span>{{ title }}</span></a></li>
-          {% endfor %}
-          </ul>
           <ul class="left">
           {% for p in PAGES -%}
             <li{% if p == page %} class="active"{% endif %}><a href="{{ SITEURL }}/{{ p.url }}">{{ p.title }}</a></li>
           {%- endfor %}
             <li{% if output_file == ARCHIVES_SAVE_AS %} class="active"{% endif %}><a href="{{ SITEURL }}/{{ ARCHIVES_URL }}">部落格</a></li>
+          </ul>
+          <ul class="right">
+              {% for title, link in SOCIAL -%}
+              <li><a href="{{ link }}" rel="external nofollow" class="{{ title|lower }} icon"><span>{{ title }}</span></a></li>
+              {% endfor %}
           </ul>
         </section>
       </nav>
