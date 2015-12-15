@@ -4,8 +4,14 @@ from __future__ import unicode_literals
 
 AUTHOR = u'臺大開源社'
 SITENAME = u'臺灣大學開源社'
-SITESUBTITLE = '讓我們一起推廣開源理念，許世界更美好的未來！'
+SITESUBTITLE = '資訊時代公民的必備技能點'
 SITEURL = ''
+SITETITLE = '開源，改造全世界'
+SITEDESCRIPTION = '''
+<p>面對高漲的物價、滿街的廢水、爆炸的小鴨，捍衛公民權利的你，也許會有蚍蜉撼樹之感？<br>如果有個理念，得以貫徹自由開放的價值，你願意把握它嗎？</p>
+<p>開放原始碼蔚為全球潮流，從 Linux 到 Android，我們早已身處 open source 的世界中；<br>無論你對電腦了解與否，都能跟著全球的開源人改造社會。</p>
+<p><strong>歡迎加入臺大開源社！</strong>讓我們一起推廣開源理念，許世界更美好的未來！</p>
+'''
 
 TIMEZONE = 'Asia/Taipei'
 
