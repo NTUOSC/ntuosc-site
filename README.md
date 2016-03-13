@@ -37,6 +37,18 @@ And run either `fab build` or `fab serve` to generate pages or run the site loca
 
 See SASS and Fabric documentation for more options.
 
+### Issues on Modernizr
+
+One of bower dependencies of the site, Modernizer, is not a regular bower package. You will get the repo directly when installing, and you have to build it yourself before building (before pelican copies its assets). Currently there is no simply workarounds to automate this process, so watch out when deploying.
+
+Here we build all components of Modernizr, which is generally unnecessary.
+
+    cd vender/modernizr
+    npm install
+    ./bin/modernizr -c lib/config-all.json
+
+Copying the whole repo of Modernizr into `output/` directory is also a stupid idea, which is an issue to be fixed.
+
 ## Deployment
 
 Before publishing the site, make sure you've set up correct `git` remote branches already:
